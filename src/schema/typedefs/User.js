@@ -11,7 +11,7 @@ const schema = buildSchema(`
     customers: [Customer]
   }
   type Mutation {
-    updateCustomer(id: Int!, name: String!, email: String!): Customer
+    updateCustomer(id: Int!, firstName: String!): Customer
   }
 `);
 

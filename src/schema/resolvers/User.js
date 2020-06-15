@@ -11,9 +11,15 @@ const users = {
       const customer = Customer.findOne({where: {id}});
       return customer;
     },
-    updateCustomer: ({ id, name, email }) => {
-      const user = User.update({ id, name, email });
-      return user;
+    updateCustomer: async ({ id, firstName}) => {
+        const customer = await Customer.update({ firstName },
+            {
+                where: { id, },
+                returning: true,
+                plain: true,
+            }).then(() => { return Customer.findOne({ where: { id } }) });
+
+        return customer;
     },
 };
   
