@@ -1,6 +1,6 @@
-const express = require('express');
-const graphqlHTTP = require('express-graphql');
-const bodyParser = require('body-parser');
+import express from 'express';
+import graphqlHTTP  from 'express-graphql';
+import bodyParser from 'body-parser';
 import { database } from '../config/database';
 import userSchema from '../src/schema/typedefs/User'
 import userResolver from '../src/schema/resolvers/User'

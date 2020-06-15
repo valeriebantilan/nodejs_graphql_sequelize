@@ -1,4 +1,4 @@
-const sequelize = require('sequelize');
+import sequelize from 'sequelize';
 import { Customer } from '../../../config/sequelize';
 
 
