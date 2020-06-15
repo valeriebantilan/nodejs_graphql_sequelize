@@ -1,0 +1,20 @@
+# Babel ES6 compiles files
+dist
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directory
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# .env
+.env
+
+#.package-lock.json
+package-lock.json
