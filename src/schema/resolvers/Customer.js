@@ -3,12 +3,12 @@ import { Customer } from '../../../config/sequelize';
 
 
 const users = {
-    customers: () => {
-      const customers = Customer.findAll();
+    customers: async () => {
+      const customers = await Customer.findAll();
       return customers;
     },
-    customer: ({ id }) => {
-      const customer = Customer.findOne({where: {id}});
+    customer: async ({ id }) => {
+      const customer = await Customer.findOne({where: {id}});
       return customer;
     },
     updateCustomer: async ({ id, firstName}) => {

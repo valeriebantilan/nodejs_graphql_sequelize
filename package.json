@@ -4,7 +4,7 @@
   "description": "Nodejs integration with GraphQL",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --require @babel/register test/*.test.js",
     "start": "nodemon src/server.js"
   },
   "author": "valeriebantilan",
@@ -28,9 +28,12 @@
     "babel-eslint": "^10.1.0",
     "babel-plugin-inline-import": "^3.0.0",
     "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
+    "mocha": "^8.0.1",
     "nodemon": "^2.0.4",
-    "sequelize-cli": "^5.5.1"
+    "sequelize-cli": "^5.5.1",
+    "supertest": "^4.0.2"
   }
 }
