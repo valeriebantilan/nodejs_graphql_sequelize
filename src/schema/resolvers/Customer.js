@@ -33,9 +33,10 @@ const users = {
         throw new Error(err);
       }
   },
-  createCustomer: async ({ firstName, lastName }) => {
+  createCustomer: async ({input}) => {
     try {
-      const customer = await Customer.create({ firstName, lastName });
+      const { firstName, lastName, email } = input;
+      const customer = await Customer.create({ firstName, lastName, email });
   
       return customer;
 
