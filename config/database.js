@@ -1,11 +1,12 @@
 import Sequelize from 'sequelize';
-import config from './config';
+import config from './db';
 
 
 const database = new Sequelize(
-  config.development.name,
+  config.development.database,
   config.development.username,
-  config.development.password, {
+  config.development.password,
+  {
     host: config.development.host,
     dialect: 'mysql' || 'postgres',
     // dialectOptions: {
@@ -26,8 +27,6 @@ const database = new Sequelize(
     },
   },
 );
-
-
 
 module.exports = {
   database,
