@@ -12,12 +12,18 @@ const schema = buildSchema(`
     lastName: String!
     email: String!
   }
+  input UpdateCustomerInput {
+    id: Int!
+    firstName: String
+    lastName: String
+    email: String
+  }
   type Query {
     customer(id: Int!): Customer,
     customers: [Customer]
   }
   type Mutation {
-    updateCustomer(id: Int!, firstName: String!): Customer,
+    updateCustomer(input: UpdateCustomerInput!): Customer,
     createCustomer(input: CreateCustomerInput!): Customer,
     deleteCustomer(id: Int!): Boolean
   }

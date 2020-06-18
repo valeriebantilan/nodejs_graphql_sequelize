@@ -19,16 +19,17 @@ const users = {
         throw new Error(err);
       }
     },
-  updateCustomer: async ({ id, firstName }) => {
+  updateCustomer: async ({ input }) => {
       try {
-        const customer = await Customer.update({ firstName },
+
+        const updateCustomer = await Customer.update(input,
           {
-              where: { id, },
+              where: { id: input.id, },
               returning: true,
               plain: true,
-          }).then(() => { return Customer.findOne({ where: { id } }) });
+          }).then(() => { return Customer.findOne({ where: { id: input.id } }) });
 
-        return customer;
+        return updateCustomer;
       } catch (err) {
         throw new Error(err);
       }
