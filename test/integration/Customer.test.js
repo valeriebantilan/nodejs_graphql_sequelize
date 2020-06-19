@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const supertest = require('supertest');
-const app = require('../src/server');
+const app = require('../../src/server');
 
 const request = supertest(app);
 
@@ -13,7 +13,7 @@ describe('GraphQL', () => {
             email: "venxel@gmail.com"
     };
 
-    const deleteId = 9;
+    const deleteId = 11;
     const updateId = 3;
 
     it('Return all customers', (done) => {
